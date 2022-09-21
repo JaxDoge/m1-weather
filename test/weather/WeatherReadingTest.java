@@ -5,10 +5,12 @@ import static org.junit.Assert.*;
 public class WeatherReadingTest {
 
     WeatherReading testInit;
+    WeatherReading testInit2;
 
     @org.junit.Before
     public void testConstruct() {
         testInit = new WeatherReading(13,10,7,69);
+        testInit2 = new WeatherReading(28, 19, 30, 92);
     }
 
     @org.junit.Test
@@ -43,11 +45,12 @@ public class WeatherReadingTest {
 
     @org.junit.Test
     public void getWindChill() {
-        assertEquals(2.598857063812889, testInit.getWindChill(), 0.000001);
+//        assertEquals(2.598857063812889, testInit.getWindChill(), 0.000001);
+        assertEquals(86.0486354763942, testInit2.getWindChill(), 0.000001);
     }
 
     @org.junit.Test
     public void testToString() {
-        assertEquals("WeatherReading{airTemp=13, dpTemp=10, windSpeed=7, rainRec=69}", testInit.toString());
+        assertEquals("Reading: T = 13, D = 10, v = 7, rain = 69", testInit.toString());
     }
 }
